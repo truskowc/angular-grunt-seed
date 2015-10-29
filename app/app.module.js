@@ -1,4 +1,4 @@
-var webrdApp = angular.module('smApp', ['ui.router','ui.bootstrap','uiGmapgoogle-maps', 'angulartics', 'angulartics.google.analytics', 'angular-hal','ngSanitize','grecaptcha','satellizer'])
+var webrdApp = angular.module('smApp', ['ui.router','ui.bootstrap','uiGmapgoogle-maps', 'angulartics', 'angulartics.google.analytics', 'angular-hal','ngSanitize','grecaptcha'])
 
 .controller('mainCtrl', ['$scope','$window','$rootScope', '$state','$filter',
 	function($scope, $window, $rootScope, $state, $filter) {
