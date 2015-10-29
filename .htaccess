@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !(/(app/|assets/|api/|js/|twilio/|subseed))
+RewriteRule ^.+$ index.html [L]
+DirectoryIndex index.html index.asp

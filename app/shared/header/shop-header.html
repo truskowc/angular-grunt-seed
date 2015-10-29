@@ -1,0 +1,71 @@
+<menu visible="rightVisible" alignment="right">
+   <a style="cursor: pointer;" class="" ng-click="close($event)" analytics-on="click" analytics-category="Main Menu" analytics-event="Click" analytics-label="Closed Sliding Menu">
+    <span  class="glyphicon glyphicon-remove schnucks_red"></span>
+    <span class="schnucks_red">Close</span>
+  </a>
+  <img src="assets/img/soldier_full.png" height="40px" style="float:right;margin-right:25px;margin-top:5px;" />
+    <menu-item>
+       <form class="navbar-form navbar-right" role="search" ng-submit="searchProductsMobile()" ng-show="main.showSearch">
+        <div class="input-group">
+          <input type="search" class="form-control" placeholder="Search" name="srch-term-mobile" id="srch-term-mobile">
+          <div class="input-group-btn">
+              <button class="btn btn-default" type="submit" analytics-on="click" analytics-event="Submit" analytics-category="Main Search"><i class="glyphicon glyphicon-search" analytics-on="click" analytics-event="Click" analytics-category="Search" analytics-label="Searched for an item in sliding menu"></i></button>
+              <a ng-if="main.storeConfig.flags.CATALOG_ORDERING && main.schnucksStoreId" ui-sref="cart" class="btn btn-default hidden-xs hidden-sm" analytics-on="click" analytics-event="Click" analytics-category="Cart Button" analytics-label="By Search Input"><i class="glyphicon glyphicon-shopping-cart schnucks_red"></i> <span class="badge schnucks_red">{{ main.cart.numberOfItems }}</span></a>
+          </div>          
+        </div>
+      </form> 
+    </menu-item>
+    <menu-item><a ui-sref="/" analytics-on="click" analytics-event="Click" analytics-category="Main Menu" analytics-label="Party Guide Home">Party Guide Home</a></menu-item>
+    <menu-item><a ui-sref="stores({referrer: main.schnucksReferrer})" analytics-on="click" analytics-event="Click" analytics-category="Main Menu" analytics-label="Store Locator">Select My Store</a></menu-item>
+    <menu-item><a ui-sref="departments({storeId: main.schnucksStoreId})" analytics-on="click" analytics-event="Click" analytics-category="Main Menu" analytics-label="Departments">Departments</a></menu-item>
+    <menu-item><a ui-sref="shop/products({ dept: 'browse', deptID: 6 })" analytics-on="click" analytics-event="Click" analytics-category="Main Menu" analytics-label="Products">Products</a></menu-item>
+    <menu-item ng-if="main.storeConfig.flags.CATALOG_ORDERING && main.schnucksStoreId"><a ng-if="main.storeConfig.flags.CATALOG_ORDERING && main.schnucksStoreId && main.showLogin" ui-sref="cart" analytics-on="click" analytics-event="Click" analytics-category="Main Menu" analytics-category="Main Menu" analytics-label="Cart">My Cart ({{ main.cart.numberOfItems }})</a></menu-item>
+    <menu-item ng-if="main.showLogin"><a ui-sref="auth({ type:'login'})" analytics-on="click" analytics-event="Click" analytics-category="Main Menu" analytics-category="Main Menu" analytics-label="Login">Login</a></menu-item>
+    <menu-item><a ui-sref="feedback" analytics-on="click" analytics-event="Click" analytics-category="Main Menu" analytics-label="Feedback">Feedback</a></menu-item>
+    
+</menu>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid nav-width">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+    <!-- data-toggle="offcanvas" data-autohide="false" data-target=".navmenu" data-canvas="body" data-disable-scrolling="false" -->
+    <!-- data-toggle="collapse" snap-toggle="right" data-target="#rwd-menu" -->
+      <button type="button" class="navbar-toggle" ng-click="showRightA($event);">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.schnucks.com" analytics-on="click" analytics-event="Click" analytics-category="Schnucks Logo"><img src="assets/img/schnucks-logo.svg" alt="Schnucks Logo" class="logo" /></a>
+      <div class="hidden-lg hidden-md navbar-right navbar-nav cart-button-div-if-mobile">
+        <a  ng-if="main.storeConfig.flags.CATALOG_ORDERING && main.schnucksStoreId" ui-sref="cart" class="btn btn-default cart-button hidden-md hidden-lg" analytics-on="click" analytics-event="Click" analytics-category="Cart Button" analytics-label="Mobile Button"><i class="glyphicon glyphicon-shopping-cart schnucks_red"></i> <span class="badge schnucks_red">{{ main.cart.numberOfItems }}</span></a>
+      </div>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="rwd-menu">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Main Menu <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">  
+            <li>
+              <a ng-href='/webct/seed/subseed/'>SUBSEED</a>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+      <form class="navbar-form navbar-right" role="search" ng-submit="searchProducts()" ng-show="main.showSearch">
+      <div class="input-group">
+          <input type="search" class="form-control" ng-model="itemSearch" placeholder="Search" name="srch-term" id="srch-term">
+          <div class="input-group-btn">
+              <button class="btn btn-default" type="submit" analytics-on="click" analytics-event="Submit" analytics-category="Main Search"><i class="glyphicon glyphicon-search" analytics-on="click" analytics-event="Click" analytics-category="Search" analytics-label="Searched for an item"></i></button>
+              <a ng-if="main.storeConfig.flags.CATALOG_ORDERING && main.schnucksStoreId" ui-sref="cart" class="btn btn-default hidden-xs hidden-sm" analytics-on="click" analytics-event="Click" analytics-category="Cart Button" analytics-label="By Search Input"><i class="glyphicon glyphicon-shopping-cart schnucks_red"></i> <span class="badge schnucks_red">{{ main.cart.numberOfItems }}</span></a>
+          </div>
+
+          
+      </div>
+    </form> 
+    
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

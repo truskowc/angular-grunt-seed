@@ -1,0 +1,93 @@
+<!doctype html>
+<html ng-app="smApp" ng-controller="mainCtrl">
+
+<head>
+<style>
+	[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  		display: none !important;
+	}
+</style>
+<meta charset="utf-8">
+<meta name="fragment" content="!">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title ng-bind="Page.title()"></title>
+<base href="/webct/seed/">
+<meta name="fragment" content="!">
+<meta name="prerender-status-code" content="404">
+<meta name="description" content="{{ MetaInformation.metaDescription() }}">
+<meta name="keywords" content="{{ MetaInformation.metaKeywords() }}">
+<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+<link href="assets/img/schnucks_profilepic-5-76x76.png" rel="apple-touch-icon" sizes="76x76" />
+<link href="assets/img/schnucks_profilepic-5-120x120.png" rel="apple-touch-icon" sizes="120x120" />
+<link href="assets/img/schnucks_profilepic-5-152x152.png" rel="apple-touch-icon" sizes="152x152" />
+<link href="assets/img/schnucks_profilepic-5-180x180.png" rel="apple-touch-icon" sizes="180x180" />
+<link href="assets/img/schnucks_profilepic-5-192x192.png" rel="icon" sizes="192x192" />
+<link href="assets/img/schnucks_profilepic-5-128x128.png" rel="icon" sizes="128x128" />
+
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body ng-cloak>
+
+<shop-header></shop-header>
+
+<div class="container-fluid wrapper">
+	<div id="store-selected-header" ng-if="main.schnucksStoreId">Your Store: 
+    	<div class="store-name" id="store-name-header">
+    		<a ui-sref="store({ storeId: main.schnucksStoreId })" analytics-on="click" analytics-event="Click" analytics-category="Header Store Link" analytics-label="{{main.schnucksStoreName | titleCase}}">{{main.schnucksStoreName}}</a>, 
+    	</div>
+    	<div class="store-phone" id="store-phone-header"><a href="tel:{{main.schnucksStorePhone}}">{{main.schnucksStorePhone}}</a></div>
+	</div>
+	<div id="error" ng-show="main.errorMsg" class="error well"></div>
+    <div ui-view ng-hide="main.errorMsg"></div>
+    <div class="push"></div>
+</div>
+
+<basic-footer></basic-footer>
+
+<!-- build:js js/a.js -->
+<script src="assets/libs/jquery.min.js"></script>
+<script src="assets/libs/angular.min.js"></script>
+<script src="assets/libs/angular-ui-router.min.js"></script>
+<script src="assets/libs/lodash.min.js"></script>
+<script src="assets/libs/angular-google-maps.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/libs/ui-bootstrap-tpls.min.js"></script>
+<script src="assets/libs/angular-sanitize.min.js"></script>
+<script src="assets/libs/angular-grecaptcha.js"></script>
+<script src="assets/libs/satellizer.min.js"></script>
+<!-- endbuild -->
+
+<!-- build:js js/m.js -->
+<script src="assets/libs/rfc6570.js"></script>
+<script src="assets/libs/angular-hal.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
+<script src="assets/libs/angulartics.js"></script>
+<script src="assets/libs/angulartics-ga.js"></script>
+<script src="assets/js/defaults.js"></script>
+<script src="app/app.module.js"></script>
+<script src="app/app.directives.js"></script>
+<script src="app/app.services.js"></script>
+<script src="app/app.run.js"></script>
+<script src="app/app.routes.js"></script>
+<script src="app/components/home/homeController.js"></script>
+<!-- endbuild -->
+
+<script type="text/javascript" src="https://fast.fonts.net/jsapi/6715b115-74da-4d4a-8ae2-bcd36753775a.js"></script>
+<script>
+  /*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3017216-17', 'auto');
+  ga('send', 'pageview');*/
+
+</script>
+</body>
+</html> 

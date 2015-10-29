@@ -1,0 +1,16 @@
+/* Footer styles */
+#footer {
+    margin-top: 18px;
+    margin-bottom: 12px;
+    padding-top: 8px;
+    border-top: 1px solid lightgray;
+    text-align: center;
+}
+.disclaimer-footer {
+    font-size: .6666em;
+    text-align: center;
+    display: block;
+}
+.footer, .push {
+    height: 80px; /* .push must be the same height as .footer */
+}

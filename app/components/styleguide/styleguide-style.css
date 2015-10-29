@@ -1,0 +1,17 @@
+section {
+    padding: 15px 0;
+}
+.color-rect {
+    width: 50px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+}
+.body-font-color-style {
+    background-color: #444345;
+}
+.body-background-style {
+    background-color: #ffffff;
+    border: 1px solid;
+}

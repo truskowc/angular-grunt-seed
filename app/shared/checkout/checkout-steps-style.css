@@ -1,0 +1,249 @@
+/* Checkout Steps */
+.checkout-steps {
+    font-size: .75em;
+    /*background: lightgray;*/
+    margin-bottom: 10px;
+    padding: 10px 0;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+.checkout-slot,
+.step {
+    padding: 12px 2px 15px 25px;
+    display: inline;
+    height: 10px;
+    width: 10px;
+}
+.step:nth-of-type(-2n + 2) {
+    padding-left: 10px;
+}
+.step:last-of-type {
+    padding-right: 10px;
+}
+.checkout-slot {
+    padding: 11px 2px;
+}
+.checkout-steps > .active {
+    /* background: #0F9C24; green */
+    background: #18295f;
+    color: #fff;
+}
+.complete {
+    color: darkgray;
+}
+.checkmark::before {
+    content: "\2713" !important;
+}
+.s4 > .arrow,
+.s4 > .arrow-border {
+    border: none;
+}
+.gradient-triangle {
+    width: 48px;
+    height: 50px;
+    position: absolute;
+    clip: rect(auto 47px auto 24px);
+    bottom: -5px;
+    margin-left: -25px;
+}
+.gradient-triangle::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background: linear-gradient(to bottom, #e8e8e8 0%,#f5f5f5 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e8e8), color-stop(100%,#f5f5f5));
+    /*
+    background-image: -webkit-gradient(
+        linear,right bottom,left bottom,
+        color-stop(.75, #52882d),
+        color-stop(0,  #eee)
+    );
+    */
+    border: 1px solid #dcdcdc;
+}
+.gradient-triangle-active::after {
+    background: #18295f;
+}
+.s4 > .gradient-triangle,
+.s4 > .gradient-triangle-active {
+    border: none;
+}
+.gradient-triangle:last-child,
+.gradient-triangle-active:last-child {
+    display: none;
+}
+#pre-timepicker{
+    width:100%;
+    border:1px solid #ccc;
+}
+#pre-timepicker .had-error{
+    border:1px solid #a94442;
+}
+.input-group table{
+    padding:10px;
+   
+}
+/*
+.arrow {
+    width: 0; 
+    height: 0; 
+    border-bottom: 20px solid transparent;
+    border-top: 20px solid transparent;
+    border-left: 19px solid lightgray;
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+    bottom: 5px;
+    margin-right: -20px;
+}
+.arrow-border {
+    content: "";
+    width: 0; 
+    height: 0; 
+    border-bottom: 20px solid transparent;
+    border-top: 20px solid transparent;
+    border-left: 19px solid darkgray;
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+    margin-left: -16px;
+    left: 21px;
+    bottom: 5px;
+}
+*/
+.arrow {
+    width: 0;
+    height: 0;
+    border-bottom: 20px solid transparent;
+    border-top: 20px solid transparent;
+    border-left: 19px solid lightgray;
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+    bottom: 5px;
+    margin-right: -20px;
+}
+.arrow::after {
+    content: "";
+    width: 0; 
+    height: 0; 
+    border-bottom: 20px solid transparent;
+    border-top: 20px solid transparent;
+    border-left: 19px solid darkgray;
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+    right: 2px;
+    margin-left: -16px;
+    z-index: -1;
+}
+.active-arrow {
+    /* border-left: 19px solid #0F9C24; green */
+    border-left: 19px solid #18295f;
+}
+.arrow:last-child,
+.arrow-border:last-child {
+    display: none;
+}
+.step-number::before {
+    border: 2px solid darkgray;
+    border-radius: 50%;
+    padding: 3px 7px;
+}
+.s1 > .step-number::before {
+    content: "1";
+}
+.s2 > .step-number::before {
+    content: "2";
+}
+.s3 > .step-number::before {
+    content: "3";
+}
+.s4 > .step-number::before {
+    content: "4";
+}
+/* ANIMATE CHECKMARK */
+@-webkit-keyframes check {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  25% {
+    height: 0;
+    width: 10px;
+  }
+  50% {
+    height: 20px;
+    width: 10px;
+  }
+}
+@keyframes check {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  25% {
+    height: 0;
+    width: 10px;
+  }
+  50% {
+    height: 20px;
+    width: 10px;
+  }
+}
+
+/* MEDIA QUERIES */
+      
+/* Step Indicator */
+@media (min-width: 560px)
+{
+    /* not needed if going with Henry the Soldier
+    .checkout-cart {
+        position: relative;
+        bottom: 8px;
+    }
+    .checkout-cart::after {
+        content: "Checkout";
+        position: relative;
+        top: 18px;
+        right: 43px;
+        margin-right: -40px;
+    }
+    */
+    .s1 > .step-title::before {
+        content: "Information";
+    }
+    .s2 > .step-title::before {
+        content: "Validate";
+    }
+    .s3 > .step-title::before {
+        content: "Review";
+    }
+    .s4 > .step-title::before {
+        content: "Order";
+    }
+}
+
+/* Small devices (tablets, 768px and up) @screen-sm-min */
+@media (min-width:768px)
+{
+    .s1 > .step-title::before {
+        content: "Your Information";
+    }
+    .s2 > .step-title::before {
+        content: "Validate Email";
+    }
+    .s3 > .step-title::before {
+        content: "Review Order";
+    }
+    .s4 > .step-title::before {
+        content: "Place Order";
+    }
+}

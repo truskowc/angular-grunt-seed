@@ -1,0 +1,238 @@
+<div>
+ 
+<h1>Schnucks Styleguide</h1>
+<p>All the elements that have been designed so far. Should be able to view all the styles and know how they are designed to work. Should be copy pastabowl code. Should show multiple variations and use cases.</p>
+
+<section>
+    <h2>Font Information</h2>
+    <p>Heading font stack: "HelveticaNeueW01-75Bold"</p>
+    <p>Paragraph font stack: Helvetica Neue, Arial, Verdana, Helvetica, sans-serif</p>
+    <p>Base font size is set to: 18px</p>
+</section>
+
+<section>
+    <h2>Color Palette</h2>
+    <p>Body font color: #444345 <span class="color-rect body-font-color-style"></span></p>
+    <p>Body background color: #ffffff (default, technically unset) <span class="color-rect body-background-style"></span></p>
+</section>
+
+<section>
+    <h2>Headings</h2>
+    <h1>This is a H1 heading</h1>
+    <h2>This is a H2 heading</h2>
+    <h3>This is a H3 heading</h3>
+    <h4>This is a H4 heading</h4>
+    <h5>This is a H5 heading</h5>
+    <h6>This is a H6 heading</h6>
+</section>
+
+<section>
+    <h2>Buttons</h2>
+    <div class="button">Button</div>
+    <button class="button button-default">Button Default</button>
+    <button class="button button-blue">Button Blue</button>
+    <button class="button button-green">Button Green</button>
+    <button class="button button-red">Button Red</button>
+    <br />
+    <br />
+    <button type="submit" value="Next Step" class="button button-default" disabled>Button Default - Disabled</button>
+    <button type="submit" value="Next Step" class="button button-blue" disabled>Button Blue - Disabled</button>
+    <button type="submit" value="Next Step" class="button button-green" disabled>Button Green - Disabled</button>
+    <button type="submit" value="Next Step" class="button button-red" disabled>Button Red - Disabled</button>
+</section>
+
+<section>
+    <h2>Form Elements</h2>
+    <section>
+        <h3 style="margin-bottom: 10px;">Input Fields</h3>
+        <div ng-if="inputs.NAME" class="form-group" ng-class="{ 'has-error' : infoForm.name.$invalid && infoForm.name.$dirty && infoForm.name.$touched }">
+            <div class="group">
+                <label for="name">Name</label>
+                <input type="text" name="name" ng-minlength="2" ng-required="true" required id="name" ng-model="form.NAME" class="input-field">
+                <span class="validation"></span>
+            </div>
+             <p ng-show="infoForm.name.$invalid && infoForm.name.$dirty && infoForm.name.$touched" class="help-block has-error">Your name must be more than 2 characters long.</p>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error' : infoForm.first_name.$invalid &amp;&amp; infoForm.first_name.$dirty &amp;&amp; infoForm.first_name.$touched }">
+            <div class="group">
+                <input type="text" name="first_name" ng-minlength="2" ng-required="true" required="required" id="first_name" ng-model="info.user.first_name" class="input-field ng-pristine ng-untouched ng-valid-minlength ng-valid ng-valid-required">
+                <label for="first_name" class="">Text Input</label>
+                <span class="validation"></span>
+            </div>
+            <p ng-show="infoForm.first_name.$invalid &amp;&amp; infoForm.first_name.$dirty &amp;&amp; infoForm.first_name.$touched" class="help-block has-error ng-hide">First Name Must Be 2 or More Characters</p>
+        </div>
+        
+       <div class="form-group" ng-class="{ 'has-error' : feedbackForm.phone.$invalid && feedbackForm.phone.$touched && feedbackForm.phone.$dirty }">
+             <div class="group">
+                <input type="phone" name="phone" id="phone" ng-change="formatPhone($event)" ng-pattern="phoneNumberPattern" ng-model="feedback.phone" ng-required="true" class="input-field" placeholder="(xxx)-xxx-xxxx">
+                <label for="phone">Phone</label>
+                <span class="validation" ></span>
+                <p ng-show="feedbackForm.phone.$invalid && feedbackForm.phone.$dirty && feedbackForm.phone.$touched " class="help-block has-error">Please Provide a Valid Phone Number.</p>
+             </div>
+       </div>
+
+<!--        <div class="form-group" ng-class="{ 'has-error' : infoForm.phone_number.$invalid &amp;&amp; infoForm.phone_number.$dirty &amp;&amp; infoForm.phone_number.$touched }">
+            <div class="group">
+                <input type="tel" name="phone_number" ng-pattern="[object Object]" ng-change="formatPhone($event)" ng-required="true" id="phone_number" ng-model="info.user.phone" class="input-field ng-pristine ng-untouched ng-valid-pattern ng-valid ng-valid-required" required="required" ui-mask="999-999-9999" placeholder="(xxx)-xxx-xxxx"> 
+                <label for="phone_number">Phone Number</label>
+                <span class="validation"></span>
+            </div>
+            <div id="phone_number_status" class="control-label helper-text">If we have questions, we will call you.</div>
+            <p ng-show="infoForm.phone_number.$invalid &amp;&amp; infoForm.phone_number.$dirty &amp;&amp; infoForm.phone_number.$touched " class="help-block has-error ng-hide">Please Provide a Valid Phone Number</p>
+        </div>
+-->
+
+        <div class="form-group" ng-class="{ 'has-error' : infoForm.email.$invalid &amp;&amp; infoForm.email.$dirty &amp;&amp; infoForm.email.$touched }">
+            <div class="group">
+                <input type="email" name="email" id="email" ng-pattern="[object Object]" required="required" ng-required="true" ng-model="info.user.email" class="input-field ng-pristine ng-untouched ng-valid-email ng-valid-pattern ng-valid ng-valid-required">
+                <label for="email">Email</label>
+                <span class="validation"></span>
+            </div>
+            <div id="email_status" class="control-label helper-text">You will get an email receipt and status updates.</div> 
+            <p ng-show="infoForm.email.$invalid &amp;&amp; infoForm.email.$dirty &amp;&amp; infoForm.email.$touched " class="help-block has-error ng-hide">Please Provide a Valid Email</p>
+        </div>
+
+        <!--<div ng-if="inputs.ZIP" class="form-group" ng-class="{ 'has-error' : infoForm.zip.$invalid && infoForm.zip.$dirty && infoForm.zip.$touched }">-->
+        <div class="form-group">
+            <div class="group">
+                <label for="zip">Zip Code</label>
+                <input type="text" name="zip" ng-minlength="2" ng-required="true" required id="zip" ng-model="form.ZIP" class="input-field" ng-pattern="zipCodePattern" ng-change="zipValid()">
+                <span class="validation"></span>
+            </div>
+           <p ng-show="infoForm.zip.$invalid && infoForm.zip.$dirty && infoForm.zip.$touched" class="help-block has-error">You must provide a valid zipcode.</p>
+        </div>
+
+<!--        <div ng-if="inputs.STORE_CHOICE" ng-show="showStores" class="form-group ">-->
+        <div class="form-group">
+          <label for="store">Which Store Do You Shop At?</label>
+          <div class="input-group">
+            <div class="dropdown-group" dropdown>
+              <button type="button" class="dropdown-button">{{storeSelected == undefined ? 'Store' : storeSelected.full}}</button>
+              <button type="button" class="dropdown-button-arrow dropdown-toggle" dropdown-toggle>
+                <span class="caret"></span>
+                <span class="sr-only">Split button!</span>
+              </button>
+               <ul class="dropdown-box scrollable-menu" role="menu">
+                <li ng-repeat="s in stores | orderBy: ['CALC_DISTANCE','NAME']"><a href="#" ng-click="setStoreSelected(s.STORE,s.NAME)">{{ s.NAME }}<span class="pull-right" ng-show="showDistance"> {{ s.CALC_DISTANCE.toFixed(2) }} miles</span></a></li>
+                <span class="pointer-arrow"></span>
+                <li>
+                    <a href="">item</a>
+                </li>
+                <li>
+                    <a href="">item</a>
+                </li>
+                <li>
+                    <a href="">item</a>
+                </li>
+                <li>
+                    <a href="">item</a>
+                </li>
+                <li>
+                    <a href="">item</a>
+                </li>
+              </ul>
+            </div>
+            <span class="validation window-check" ng-class="{ 'window-go' : storeSelected !== undefined, 'window-stop' : storeSelected == undefined }"></span>
+            <input type="hidden" ng-model="storeSelected" ng-required="true"/>
+          </div>
+        </div>
+
+        <!--<div ng-if="inputs.CITY" class="form-group" ng-class="{ 'has-error' : infoForm.city.$invalid && infoForm.city.$dirty && infoForm.city.$touched }">-->
+        <div class="form-group">
+            <div class="group">
+                <label for="city">City</label>
+                <input type="text" name="city" ng-minlength="2" ng-required="true" required id="city" ng-model="form.CITY" class="input-field">
+                <span class="validation"></span>
+            </div>
+             <p ng-show="infoForm.city.$invalid && infoForm.city.$dirty && infoForm.city.$touched" class="help-block has-error">City must be more than 4 characters long.</p>
+        </div>
+
+
+       <!--<div ng-if="inputs.STATE" class="form-group ">-->
+       <div class="form-group">
+          <label for="state" class="control-label">State</label>
+          <div class="input-group">
+            <div class="dropdown-group" dropdown>
+              <button type="button" class="dropdown-button">{{stateSelected == undefined ? 'Select A State' : stateSelected.full}}</button>
+              <button type="button" class="dropdown-button-arrow dropdown-toggle" dropdown-toggle>
+                <span class="caret"></span>
+                <span class="sr-only">Split button!</span>
+              </button>
+              <ul class="dropdown-box" role="menu">
+                <li ng-repeat="(key, value) in states"><a href="#" ng-click="setStateSelected(key,value)">{{ value }}</a></li>
+                <li>
+                    <a href="">item</a>
+                </li>
+                <li>
+                    <a href="">item</a>
+                </li>
+              </ul>
+            </div>
+            <span class="validation window-check" ng-class="{ 'window-go' : stateSelected !== undefined, 'window-stop' : stateSelected == undefined }"></span>
+            <input type="hidden" ng-model="stateSelected" ng-required="true"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+            <div class="group optional" id="info-pre-textarea">
+                <textarea id="order_comments" class="input-field ng-pristine ng-untouched ng-valid" ng-model="info.order.comments" rows="3"></textarea>
+                <label for="order_comments">Text Area<span class="optional-field"> (optional)</span></label>
+            </div>
+        </div>
+
+        <div class="group" id="feedback-pre-textarea">
+            <textarea type="text" name="comments" class="input-field ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-minlength="10" ng-maxlength="4000" ng-required="true" ng-model="feedback.comments" rows="3" required="required"></textarea>
+            <label for="comments">Comments</label>
+            <span class="validation textarea-check"></span>
+            <p ng-show="feedbackForm.comments.$invalid &amp;&amp; feedbackForm.comments.$touched &amp;&amp; feedbackForm.comments.$dirty" class="help-block has-error ng-hide">Must be more than 10 characters long</p>
+        </div>
+    </section>
+
+    <section>
+        <h3>Checkboxes</h3>
+        <div class="checkmark-box ng-scope" ng-if="info.RULES_DOC_PATH !== null">
+            <input type="checkbox" id="check_2" class="check ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="rules" ng-required="true" required="required">
+            <label for="check_2">Accept <a target="_blank" href="">Rules</a></label>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="checkmark-box ng-scope" ng-if="info.RULES_DOC_PATH !== null">
+            <input type="checkbox" id="check_3" class="check ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="rules" ng-required="true" required="required">
+            <label for="check_3">Accept Some <a target="_blank" href="">Policy</a></label>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="checkmark-box ng-scope" ng-if="info.RULES_DOC_PATH !== null">
+            <input type="checkbox" id="check_4" class="check ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="rules" ng-required="true" required="required">
+            <label for="check_4">A long description checkbox that may or may not actually ever be this long but just so we know how it would act. This should keep expanding and then wrap around once it reaches the edge of it's container.</label>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="checkmark-box ng-scope" ng-if="info.RULES_DOC_PATH !== null">
+            <input type="checkbox" id="check_5" class="check ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="rules" ng-required="true" required="required">
+            <label for="check_5">And some checkbox after the long one <a target="_blank" href="">Policy</a></label>
+        </div>
+        <div class="clearfix"></div>
+    </section>
+
+    <section>
+        <h3>Radio Buttons</h3>
+        <div class="radio-button">
+            <input type="radio" name="radio_group_1" id="rad_1">
+            <label for="rad_1">Radio</label>
+        </div>
+        
+        <div class="radio-button">
+            <input type="radio" name="radio_group_1" id="rad_2">
+            <label for="rad_2">A long description checkbox that may or may not actually ever be this long but just so we know how it would act. This should keep expanding and then wrap around once it reaches the edge of it's container.</label>
+        </div>
+
+        <div class="radio-button">
+            <input type="radio" name="radio_group_1" id="rad_3">
+            <label for="rad_3">Radio</label>
+        </div>
+    </section>
+</section>
+
+</div>

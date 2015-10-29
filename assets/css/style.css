@@ -1,0 +1,6 @@
+@import url('global-style.css');
+@import url('../../app/components/styleguide/styleguide-style.css');
+@import url('../../app/components/home/home-style.css');
+@import url('../../app/shared/header/header-style.css');
+@import url('../../app/shared/footer/footer-style.css');
+@import url('animations-style.css');

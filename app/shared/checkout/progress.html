@@ -1,0 +1,31 @@
+<div class="row checkout-steps well">
+    <div class="checkout-slot">
+        <span class="checkout-cart">
+            <!-- <i class="glyphicon glyphicon-shopping-cart"></i> -->
+            <img src="assets/img/henry_the_soldier.png" class="henry">
+        </span>
+    </div>
+
+    <div class="step s1"  ng-class="{ 'active' :  $state.includes('ordering/info'), 'complete' : !$state.includes('ordering/info') }">
+        <span class="step-number" ng-class="{ 'checkmark' :  !$state.includes('ordering/info') }"></span>
+        <span class="step-title"></span>
+    </div>
+    <span class="gradient-triangle" ng-class="{ 'gradient-triangle-active' :  $state.includes('ordering/info')  }"></span>
+
+    <div class="step s2 " ng-class="{ 'active' :  $state.includes('ordering/validate'), 'complete' :  !$state.includes('ordering/validate') && !$state.includes('ordering/info') }">
+        <span class="step-number" ng-class="{ 'checkmark' :  !$state.includes('ordering/validate') && !$state.includes('ordering/info') }"></span>
+        <span class="step-title"></span>
+    </div>
+    <span class="gradient-triangle" ng-class="{ 'gradient-triangle-active' :  $state.includes('ordering/validate')}"></span>
+    <div class="step s3" ng-class="{ 'active' :  $state.includes('ordering/review'), 'complete' :  !$state.includes('ordering/validate') && !$state.includes('ordering/info') && !state.includes('ordering/review') }">
+        <span class="step-number" ng-class="{ 'checkmark' : !$state.includes('ordering/validate') && !$state.includes('ordering/info') && !state.includes('ordering/review') }"></span>
+        <span class="step-title"></span>
+    </div>
+    <span class="gradient-triangle" ng-class="{ 'gradient-triangle-active' :  $state.includes('ordering/review')}"></span>
+
+    <div class="step s4" ng-class="{ 'active' :   $state.includes('ordering/order'),'complete' :  !$state.includes('ordering/validate') && !$state.includes('ordering/info') && !state.includes('ordering/review')  }">
+        <span class="step-number" ng-class="{ 'checkmark' :  !$state.includes('ordering/validate') && !$state.includes('ordering/info') && !state.includes('ordering/review') }"></span>
+        <span class="step-title"></span>
+    </div>
+    <span class="gradient-triangle"  ng-class="{ 'gradient-triangle-active' : $state.includes('ordering/order') }"></span>
+</div>
