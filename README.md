@@ -6,5 +6,5 @@ INSTALLATION INSTRUCTIONS:<br />
 2) change &lt;base href="/"&gt; to work with your web server configuration<br />
 <br />
 GRUNT<br />
-1) npm install to get your node_modules<br />
-2) the Gruntfile.js is ready to build your distribution package by just running "grunt production"<br />
+1) npm install to get the required packages<br />
+2) running "grunt production" will build the distribution package<br />
