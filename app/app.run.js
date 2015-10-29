@@ -2,7 +2,7 @@ webrdApp.run(['$rootScope','HalService','cart', '$state',function ($rootScope, H
   $rootScope.$state = $state;
   //HalService.load();
 
-  $rootScope.api = (location.href.indexOf('m.') !== -1) ? 'https://m.schnucks.com/api/' : 'https://coin.schnucks.com/jfehr/WebApp/';
-  $rootScope.rest = (location.href.indexOf('m.') !== -1) ? 'https://m.schnucks.com/api/Ordering/' :'https://coin.schnucks.com/jfehr/WebApp/Ordering/';
+  $rootScope.api = (location.href.indexOf('m.') !== -1) ? 'https://www.yoursite.com/api/' : 'https://www.yoursite.com/anotherApi';
+  $rootScope.rest = (location.href.indexOf('m.') !== -1) ? 'https://www.yoursite.com/api/Ordering/' :'https://www.yoursite.com/anotherApi';
 
 }])

@@ -1,8 +1,0 @@
-[
-	{"ID":1,"NAME":"Featured","BG_IMG":"assets/img/background/all-dept-bg.png"},
-	{"ID":2,"NAME":"Deli","BG_IMG":"assets/img/background/cheese-and-sausage-sampler.png"},
-	{"ID":3,"NAME":"Prepared Foods","BG_IMG":"assets/img/background/deviled-eggs.png"},
-	{"ID":4,"NAME":"Seafood","BG_IMG":"assets/img/background/seafarers-cocktail.png"},
-	{"ID":5,"NAME":"Bakery","BG_IMG":"assets/img/background/bakery-dept-bg.png"},
-	{"ID":6,"NAME":"Produce","BG_IMG":"assets/img/background/fresh-garden-veggietables-and-dip.png"}
-]
