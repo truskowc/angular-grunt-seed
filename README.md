@@ -1,5 +1,5 @@
 # angular-grunt-seed
-An AngularJS seed project that's configured with Bootstrap / RWD
+An AngularJS seed project that's configured with Bootstrap / RWD, google maps, grecaptcha, ui-bootstrap, ui-router, and angulartics.
 
 INSTALLATION INSTRUCTIONS:<br />
 1) open index.html<br />
